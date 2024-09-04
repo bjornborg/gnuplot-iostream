@@ -1,6 +1,10 @@
 cmake_minimum_required(VERSION 3.10)
 Project(GnuPlot_iostream)
 
+if(POLICY CMP0167)
+cmake_policy(SET CMP0167 NEW)
+endif(POLICY CMP0167)
+
 #options.
 option(GnuPlotIostream_BuildTests "build gnuplot iostream tests" ON)
 option(GnuPlotIostream_BuildExamples "build gnuplot iostream examples" ON)
@@ -23,8 +27,9 @@ target_link_libraries(gnuplot_iostream INTERFACE
 
 if(GnuPlotIostream_BuildTests)
   set(GnuPlotIostream_tests
-    test-assert-depth
-    test-assert-depth-colmajor
+    # These two are not supposed to compile.
+    #test-assert-depth
+    #test-assert-depth-colmajor
     test-empty
     test-noncopyable
     test-outputs
