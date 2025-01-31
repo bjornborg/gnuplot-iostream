@@ -268,7 +268,7 @@ class GnuplotTmpfileCollection {
   }
 
  private:
-  std::vector<std::shared_ptr<GnuplotTmpfile>> tmp_files;
+  std::vector<std::shared_ptr<GnuplotTmpfile>> tmp_files{};
 };
 #else // GNUPLOT_USE_TMPFILE
 class GnuplotTmpfileCollection {
@@ -1967,15 +1967,15 @@ class PlotData {
   }
 
  private:
-  std::string plotspec;
-  bool is_text;
-  bool is_inline;
-  bool has_data;
-  std::string data;
-  std::string filename;
-  std::string arr_or_rec;
-  std::string bin_fmt;
-  std::string bin_size;
+  std::string plotspec{};
+  bool is_text{};
+  bool is_inline{};
+  bool has_data{};
+  std::string data{};
+  std::string filename{};
+  std::string arr_or_rec{};
+  std::string bin_fmt{};
+  std::string bin_size{};
 };
 
 class PlotGroup {
@@ -2062,9 +2062,9 @@ class PlotGroup {
     }
   }
 
-  std::string plot_type;
-  std::vector<std::string> preamble_lines;
-  std::vector<PlotData> plots;
+  std::string plot_type{};
+  std::vector<std::string> preamble_lines{};
+  std::vector<PlotData> plots{};
 };
 
 // }}}1
